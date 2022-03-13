@@ -6,7 +6,7 @@
 %% parameters 
 clc
 k   = 0.01:0.01:1;         % rate constant
-tau = linspace(0,1,100);   % space time
+tau = linspace(0,100,100);   % space time
 %% initial condition
 Cao = 20;% mol/Lit
 %% Defining ODEs function
@@ -23,27 +23,27 @@ for  i = 1:length(tau)
         L = length(a);
         
         for m = 1: L-1
-            if a(m)-a(m+1) < 0.01                                % check for steady state
-                CA1(j) = a(m);
-                m = L-1;
+            if a(m)-a(m+1) < 0.01   % check for steady state
+                CA1(j) = a(m);      % if condition satisfy assign the value
+                m = L-1;            % move to next value
             end
         end
         for m = 1: L-1
-            if b(m+1)-b(m) < 0.01                                  % check for steady state
-            CB1(j) = b(m);
-            m = L-1;
+            if b(m+1)-b(m) < 0.01   % check for steady state
+            CB1(j) = b(m);          % if condition satisfy assign the value
+            m = L-1;                % move to next value
             end
         end
         for m = 1: L-1
-            if c(m)-c(m+1) < 0.01                                   % check for steady state
-            CA2(j) = c(m);
-            m = L-1;
+            if c(m)-c(m+1) < 0.01   % check for steady state
+            CA2(j) = c(m);          % if condition satisfy assign the value
+            m = L-1;                % move to next value
             end
         end
         for m = 1: L-1
-            if d(m)-d(m+1) < 0.01                                   % check for steady state
-            CB2(j) = d(m);
-            m = L-1;
+            if d(m)-d(m+1) < 0.01    % check for steady state
+            CB2(j) = d(m);           % if condition satisfy assign the value
+            m = L-1;                 % move to next value
             end
         end
   
@@ -62,7 +62,7 @@ xlabel('k (1/min')
 ylabel('tau (min)')
 zlabel('Concentration (mol/L)')
 legend('Ca1','Cb1','Ca2','Cb2','Location','best','Orientation','horizontal')
-title("Conc vs T vs k");
+title("Conc vs tau vs k");
 
 
 
