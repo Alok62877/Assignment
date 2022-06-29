@@ -1,4 +1,4 @@
-%% Assignment 01 GROUP - N
+%% Project 01 GROUP - N
    % 21CH60R52 Alok Ranjan
    % 21CH60R53 Rajat Gupta
    % 21CH60R54 Mayalekshmi S
